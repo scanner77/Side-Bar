@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    /* color: blue; */
+}
+
+body{
+      height: 100vh;
+      background: lightgreen;
+      /* border: 20px solid black; */
+      
+}
+
+.container{
+ position: fixed;
+ height: 100%;
+ width: 60px;
+ border: 5px solid blue;
+ background: green;
+transition: 0.5s;
+overflow: hidden;
+
+
+}
+
+.container:hover,
+.container.active{
+    background-color: lightblue;
+    width: 40%;
+    
+}
+.container ul{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+}
+.container ul li{
+    position: relative;
+    /* width: 100%; */
+    display: block;
+    list-style: none;
+   
+}
+.container ul li a{
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    /* display: block; */
+    display: flex;
+    color: lightorange;
+    /* color: white; we specify the color from here */
+}
+.container ul li a .icon{
+position: relative;
+display: block; 
+min-width: 60px;
+height: 70px;
+/* line-height: 60px; */
+text-align: center;
+color: white;
+}
+
+.container ul li a .icon .fa{
+    font-size: 24px;
+}
+/* .container ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    } */
+.toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    background-color: pink;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+.toggle:active{
+    background: blue;
+    opacity: 1;
+}
+.toggle:before{
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    /* top: 0;
+    right: 0; */
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+
+}
+.toggle:active:before{
+     content: '\f00d';
+}
+@media (max-width: 767px){
+    .container{
+        left: -60px;
+    }
+    .container.active{
+        left: 0px;
+        width: 100vw;
+    }
+}
